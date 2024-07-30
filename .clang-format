@@ -1,7 +1,7 @@
 # Partly inspired by QT coding style
 BasedOnStyle: WebKit
 Language: Cpp
-ColumnLimit: 100
+ColumnLimit: 120
 PointerBindsToType: false
 BreakBeforeBinaryOperators: NonAssignment
 BreakBeforeBraces: Custom
