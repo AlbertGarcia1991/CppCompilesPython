@@ -1,7 +1,15 @@
-all:
-	-@mkdir build
-	-@mkdir build/bin
-	g++ -o build/bin/Main.exe -c main.cpp
+SRC_DIR = src
+
+CC = g++
+
+
+.PHONY = all clean cppcheck
+
+all: cppcheck
+	$(CC) -o Main.exe -c $(SRC_DIR)/main.cpp
 
 clean:
-	-@rd /s /q build
+	-@del *exe
+
+cppcheck:
+	@cppcheck src
