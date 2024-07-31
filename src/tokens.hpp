@@ -16,11 +16,12 @@ const typedef enum {
     STRING,
 } tokens_Type;
 
-const set<string> tokens_KeywordSet { "False",    "await", "else",   "import", "pass",    "None",   "break",
-                                      "except",   "raise", "True",   "class",  "finally", "return", "and",
-                                      "continue", "for",   "lambda", "try",    "as",      "def",    "from",
-                                      "nonlocal", "while", "assert", "del",    "global",  "not",    "with",
-                                      "async",    "elif",  "if",     "or",     "yield",   "is",     "in" };
+const set<string> tokens_KeywordSet {
+    "False", "await", "else",    "import",   "pass",  "None",     "break", "except", "raise",
+    "True",  "class", "finally", "return",   "and",   "continue", "for",   "lambda", "try",
+    "as",    "def",   "from",    "nonlocal", "while", "assert",   "del",   "global", "not",
+    "with",  "async", "elif",    "if",       "or",    "yield",    "is",    "in"
+};
 
 const map<string, string> tokens_SymbolMap { { "dot", "." },
                                              { "open_parenthesis", "(" },
@@ -63,7 +64,7 @@ const map<string, string> tokents_OperatorMap {
     { "difference", "!=" },
 };
 
-set<string> tokens_OperatorSet(void);
-set<string> tokens_OperatorSet(void);
+set<string> tokens_OperatorSet();
+set<string> tokens_SymbolSet();
 
 #endif
