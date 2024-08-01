@@ -25,6 +25,7 @@ int main()
 
     char ch;
     bool bOperatorStream { false };
+    bool bBrokenLine { false };
     vector<string> vTokens;
     string vCurrBuffer;
     while (file.get(ch)) {
@@ -38,14 +39,19 @@ int main()
             if (vCurrBuffer.size() > 0) {
                 vTokens.push_back(vCurrBuffer);
                 vCurrBuffer.clear();
+                bBrokenLine = false;
             }
             if (vTokens.back() == string { mSymbols.at("backslash") }) {
                 vTokens.pop_back();
+                bBrokenLine = true;
             } else {
                 vTokens.push_back(sNewlineToken);
             }
             bOperatorStream = false;
         } else if (ch == mSymbols.at("tab")) {
+            if (bBrokenLine) {
+                continue;
+            }
             if (vCurrBuffer.size() > 0) {
                 vTokens.push_back(vCurrBuffer);
                 vCurrBuffer.clear();

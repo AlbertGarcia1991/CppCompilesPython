@@ -15,6 +15,7 @@ for n in range(len(a)):
 	while (val < 5):
 		val += 1
 	curr = 'True'
-	b := \
-	  None
+	b = \
+	  None and \
+			35
 	break
