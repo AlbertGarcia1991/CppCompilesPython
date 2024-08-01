@@ -1,6 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <set>
+#include <string>
+#include <algorithm>
+#include <vector>
 
 #include "tokens.hpp"
 
@@ -9,15 +12,20 @@ using namespace std;
 int main()
 {
     // Load keyword and operator sets
-    set<string> sOperators = tokens_OperatorSet();
-    set<string> sSymbols = tokens_SymbolSet();
+    set<string> sOperators = tokens_getOperatorsSet();
+    set<string> sSymbols = tokens_getSymbolsSet();
 
-    cout << "Hello World" << endl;
+    // Load the file to scan
+    // TODO: This will need to be pass as argument to the current function
+    ifstream file("src/example_source_code/test2.py");
+    if (!file) {
+        cerr << "Error opening file" << endl;
+        return 1;
+    }
 
     char ch;
-    fstream fin("src/example_source_code/test.py", fstream::in);
-    while (fin >> noskipws >> ch) {
-        cout << ch << endl;
-    }
+    vector<string> vTokens;
+    vector<string> vCurrBuffer;
+    while (file.get(ch)) { }
     return 1;
 }
