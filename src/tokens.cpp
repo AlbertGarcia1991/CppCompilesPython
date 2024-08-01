@@ -10,10 +10,10 @@ set<string> tokens_getOperatorsSet()
     return sOperators;
 };
 
-set<string> tokens_getSymbolsSet()
+set<char> tokens_getSymbolsSet()
 {
-    set<string> sSymbols;
-    for (map<string, string>::const_iterator it = mSymbols.begin(); it != mSymbols.begin(); ++it) {
+    set<char> sSymbols;
+    for (map<string, char>::const_iterator it = mSymbols.begin(); it != mSymbols.begin(); ++it) {
         sSymbols.insert(it->second);
     }
     return sSymbols;

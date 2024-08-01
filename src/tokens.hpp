@@ -22,21 +22,24 @@ const set<string> sKeywords { "False",    "await", "else",   "import", "pass",  
                               "nonlocal", "while", "assert", "del",    "global",  "not",    "with",
                               "async",    "elif",  "if",     "or",     "yield",   "is",     "in" };
 
-const map<string, string> mSymbols { { "dot", "." },
-                                     { "open_parenthesis", "(" },
-                                     { "close_parenthesis", ")" },
-                                     { "open_curly_brace", "{" },
-                                     { "close_curly_brace", "}" },
-                                     { "open_square_bracket", "[" },
-                                     { "close_square_bracket", "]" },
-                                     { "double_quote", "\"" },
-                                     { "single_quote", "'" },
-                                     { "hashtag", "#" },
-                                     { "colon", ":" },
-                                     { "backslash", "\\" },
-                                     { "tab", "\t" },
-                                     { "newline", "\n" },
-                                     { "whitespace", " " } };
+const map<string, char> mSymbols { { "d", '.' },
+                                   { "open_parenthesis", '(' },
+                                   { "close_parenthesis", ')' },
+                                   { "open_curly_brace", '{' },
+                                   { "close_curly_brace", '}' },
+                                   { "open_square_bracket", '[' },
+                                   { "close_square_bracket", ']' },
+                                   { "double_quote", '"' },
+                                   { "single_quote", '\'' },
+                                   { "hashtag", '#' },
+                                   { "colon", ':' },
+                                   { "backslash", '\\' },
+                                   { "tab", '\t' },
+                                   { "newline", '\n' },
+                                   { "whitespace", ' ' } };
+
+const set<char> sBasicOperators { '+', '-', '/', '*', '<', '>', '!', '|',
+                                  '^', '&', '~', '=', '%', '@', ':' };
 
 const map<string, string> mOperators {
     { "addition", "+" },
@@ -64,6 +67,6 @@ const map<string, string> mOperators {
 };
 
 set<string> tokens_getOperatorsSet();
-set<string> tokens_getSymbolsSet();
+set<char> tokens_getSymbolsSet();
 
 #endif
